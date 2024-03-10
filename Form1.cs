@@ -44,6 +44,11 @@ namespace TrayWeather2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string s1 = "\u0079\u0061\u006E";
+            string s2 = "\u0064\u0065\u0078";
+            string s3 = "\u002E\u0072\u0075";
+            string host = s1 + s2 + s3;
+
             webView21.EnsureCoreWebView2Async();
 
             XMLWorker xmlWorker = new XMLWorker();
@@ -60,7 +65,7 @@ namespace TrayWeather2
 
             minutes = SetInformation(options.rph);
 
-            webView21.Source = new Uri($"https://yandex.ru/pogoda/{options.q}", UriKind.Absolute);
+            webView21.Source = new Uri($"https://{host}/pogoda/{options.q}", UriKind.Absolute);
 
             // modify EH
             //myTimer.Tick += new EventHandler((sender, e) => TimerEventCtrl(sender, e, ref statusChecker));
