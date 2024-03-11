@@ -42,7 +42,7 @@ namespace TrayWeather2
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
             // Save the document to a file and auto-indent the output.
-            XmlWriter writer = XmlWriter.Create("xml.conf", settings);
+            XmlWriter writer = XmlWriter.Create(xmlFile, settings);
             doc.Save(writer);
         }
     }
