@@ -76,10 +76,10 @@ namespace TrayWeather2
             myTimer.Start();
         }
 
-        private void webView21_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
+        private async void webView21_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
         {
             string myScript = "document.documentElement.getElementsByClassName('temp__value temp__value_with-unit')[1].innerText";
-            string webData = webView21.ExecuteScriptAsync(myScript).Result;
+            string webData = await webView21.ExecuteScriptAsync(myScript);
             temperature = webData.Trim('\"','+').Replace('−', '-');
             if (firstTimeNavigationCompleted)
             {
