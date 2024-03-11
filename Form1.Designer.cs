@@ -73,9 +73,9 @@
             label3.AutoSize = true;
             label3.Location = new Point(63, 199);
             label3.Name = "label3";
-            label3.Size = new Size(237, 25);
+            label3.Size = new Size(241, 25);
             label3.TabIndex = 3;
-            label3.Text = "Количество запусков в час:";
+            label3.Text = "Количество запросов в час:";
             // 
             // label4
             // 
